@@ -31,32 +31,42 @@ const Header = () => {
     <>
       
       <header className='header-background-img'>
-        <div className='container-fluid '>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand ms-5" href="#"><span style={{color:"orangered"}}>Make</span><span className='text-light'> MyTrip</span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-lg-0 ">
-      <Custombutton variant="text"  text1="List Your Priority" text2= "Grow Your Business" size="small"  fontsize="10px" fontcolor="white"/>
-            <Custombutton variant="text"  text1="Introducing MyBig " text2="Business Travel Solutions" size="small" fontsize="10px" fontcolor="white" />
-            <Custombutton variant="text"  text1="My Trips "text2="Manage Your Booking" size="small" fontsize="10px" fontcolor="white" />
-            <Custombutton  variant="contained" color="primary" text1="Login or Create Account" size="large" fontsize="10px" fontcolor="white"/>
-            <Custombutton variant="text" color="secondary" text1="IN ENG" size="samll" fontsize="10px" fontcolor="white"/>
-            <Custombutton variant="text"  text1="INR" size="samll" fontsize="10px" fontcolor="white"/> 
+        
+        <div className='container-fluid'>
+          <div className='row g-0 d-flex justifu-content-center align-items-center'>
+            <div className='col-12 col-sm-6 col-md-6 col-lg-2 '><h4 className='text-light' ><span className='text-warning'>Make</span>MyTrip</h4></div>
+            <div className=' col-12 col-sm-6 col-md-6 col-lg-2  d-flex justify-content-end'>
+            <Custombutton variant="outlined" color="secondary"  text1="List Your Priority" text2= "Grow Your Business" size="large"  fontsize="10px" fontcolor="white" className='w-100'/>
 
+            </div>
+            <div className=' col-12 col-sm-6 col-md-6 col-lg-2 d-flex justify-content-end'>
+              
+            <Custombutton variant="outlined" color="secondary" text1="Introducing MyBig " text2="Business Travel Solutions" size="large" fontsize="10px" fontcolor="white" className='w-100'/>
+            </div>
+            <div className='col-12 col-sm-6 col-md-6 col-lg-2 d-flex justify-content-end'>
+            <Custombutton variant="outlined" color="secondary"  text1="My Trips "text2="Manage Your Booking" size="large" fontsize="10px" fontcolor="white" className='w-100'/>
+            </div>
+            <div className='col-12 col-sm-6 col-md-6 col-lg-2 d-flex justify-content-end'>
+            <Custombutton  variant="contained" color="primary" text1="Login or Create Account" size="large" fontsize="10px" fontcolor="white" className='w-100'/>
+            </div>
+            <div className='col-12 col-sm-6 col-md-6 col-lg-1 d-flex justify-content-end'>
+            <Custombutton variant="outlined" color="secondary" text1="IN ENG" size="large" fontsize="10px" fontcolor="white" className='w-100'/>
+            </div>
+            <div className='col-12 col-sm-6 col-md-6 col-lg-1 d-flex justify-content-end'>
+            <Custombutton variant="outlined" color="secondary" text1="INR" size="large" fontsize="10px" fontcolor="white" className='w-100'/> 
+
+              </div>
           
-      </ul>
-     
-    </div>
-  </div>
-</nav>
-       </div>
-        <div className='container custom-margin  '>
-        <nav class="navbar navbar-expand-lg bg-light navbar-light p-3 postion-arrange">
-  <div class="container-fluid">
+           
+           
+            
+       
+          
+          </div>
+      </div>
+        <div className='container  mt-5 '>
+        <nav class="navbar navbar-expand-lg bg-light navbar-light p-3 rounded-pill postion ">
+  <div class="container-fluid ">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -76,7 +86,7 @@ const Header = () => {
   </div>
 </nav>
          </div>
-           
+        
      
 
        

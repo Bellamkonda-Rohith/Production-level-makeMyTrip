@@ -2,68 +2,64 @@ import React from 'react'
 import { useState } from 'react'
 import cab from '../assests/cab.svg'
 import Custombutton from '../common/Custombutton'
+import InputField from '../common/InputField';
+import BasicDatePicker from '../common/BasicDatePicker';
+import BasicSelect from '../common/BasicSelect';
+import { optionsHours,optionsMinutes,optionsAmPm } from '../constants/Constant';
 const CabsSearch = () => {
-  const [searchParams, setSearchparams] = useState({
-    triptype: "Oneway",
-    passengers: { adult: 1, children: 0, infants: 0 },
-    class:"economy"
+ 
 
-  })
+
   return (
     <>
-      <div className="container p-3">
-        <div className="d-flex align-items-center">
-          <button className={`px-4 py-2 rounded-pill border-0 mx-3 ${searchParams.triptype === "oneway" ? "bg-primary text-light" : "bg-secondary text-light"}`} onClick={() => setSearchparams(prev => ({
-            ...prev,triptype:'oneway'
-          }))}>One Way</button>
-
-
-          <button className={`px-4 py-2 rounded-pill border-0 ${searchParams.triptype === "round" ? "bg-primary text-light" : "bg-secondary text-light"}`} onClick={() => setSearchparams(prev => ({
-            ...prev,triptype:'round'
-          }))}>Round Trip</button>
-          
-        </div>
-        <div className="container">
-          <div className="row">
-            <div className="col-3">
-            <label >From</label>
-              <div className="container border border-sexondary d-flex p-3">
-                <img src={cab} className="iconsize " alt="plane" />
-                <input type="text" className="w-100 border-0" placeholder="Enter City"/>
-              </div>
+      <div className='container p-2'><h2>Search Cabs</h2></div>
+          <div className="container-fluid my-4 d-flex justify-content-around align-items-center  ">
+          <div className="row g-5">
+            <div className=" col-12 col-sm-4 col-md-6 col-lg-2">
+            <InputField  type="search" placeholder="From" name="From "  className="w-100"/>
             </div>
-            <div className="col-3">
-            <label >To</label>
-              <div className="container border border-sexondary  d-flex p-3">
-                <img src={cab} className="iconsize  " alt="plane" />
-                <input type="text" placeholder="Enter City"  className="w-100 border-0"/>
-              </div>
+            <div className=" col-12 col-sm-4 col-md-6 col-lg-2">
+            <InputField type="search" placeholder="To" name="To"  className="w-100" />
+            </div>
 
+            <div className="col-12 col-sm-4 col-md-6 col-lg-2">
+            <BasicDatePicker name="Departure"  className="w-100" />
             </div>
-            <div className="col-3">
-            <label >Departure</label>
-              <div className="container border border-sexondary  d-flex p-3">
-                <img src={cab} className="iconsize  " alt="plane" />
-                <input type="date" placeholder="Enter date"  className="w-100 border-0"/>
-              </div>
-            </div>
-            <div className="col-3">
-            <label >Travellers & class</label>
-              <div className="container border border-sexondary  d-flex p-3">
-                <button className="border-0 bg-light" >
-                  {searchParams.passengers?.adult || 1}Adults,{searchParams.class}
-               </button>
-              </div>
             
+            <div className=" col-12 col-sm-4 col-md-6 col-lg-2">
+          <BasicDatePicker name="Return"  className="w-100" />
 
             </div>
+          <div className='col-4 border-secondary border'>
+            <div className='row'>
+            <div className="col-12 col-sm-10 col-md-6 col-lg-4 border-0">
+            <BasicSelect Options={optionsHours} label="Adults" value="adults"  className="w-100 border-0" />
+            </div>
+            <div className="col-12 col-sm-10 col-md-6 col-lg-4 border-0">
+            <BasicSelect Options={optionsMinutes} label="Children" value="Children"  className="w-100 border-0" />
+            </div>
+            <div className="col-12 col-sm-4 col-md-6 col-lg-4 border-0">
+            <BasicSelect Options={optionsAmPm} label="Class" value="Class"  className="w-100 border-0" />
+            </div>
+            </div>
+            </div>
+
           </div>
-          <div className="m-3 ">
-          <Custombutton variant="contained" color="primary" size="large" className="d-flex justify-content-center mx-auto" text1="Search Cabs"/>
-          </div>
-        </div>
+          
 
         
+          
+          
+   
+
+          
+          
+
+          
+       
+      </div>
+      <div className='container d-flex justify-content-center'>
+        <Custombutton text1="Search Cabs" color='warning' className="m-2 " variant="contained"/>
       </div>
     </>
   )

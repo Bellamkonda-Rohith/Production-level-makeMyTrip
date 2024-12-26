@@ -19,7 +19,7 @@ const TestSearch = () => {
 
   return (
     <>
-      <h3>Hotel Search</h3>
+      <h3 className='p-4'>Hotel Search</h3>
       
       <div className='container'>
         <div className='row g-3'>
@@ -81,7 +81,8 @@ const TestSearch = () => {
     
       <div className='container d-flex  justify-content-center  ' >
       <Custombutton onClick={handleButton} variant="contained" color="success"  text1="Submit" className="my-4"/>
-   </div>
+      </div>
+      
     </>
   );
 }

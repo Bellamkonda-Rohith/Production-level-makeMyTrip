@@ -1,69 +1,68 @@
 import React, { useState } from "react";
 import plane from '../assests/plane.svg'
 import Custombutton from "../common/Custombutton";
-const TrainSearch = () => {
-  const [searchParams, setSearchparams] = useState({
-    triptype: "Oneway",
-    passengers: { adult: 1, children: 0, infants: 0 },
-    class:"economy"
+import InputField from "../common/InputField";
+import BasicDatePicker from "../common/BasicDatePicker";
+import BasicSelect from "../common/BasicSelect";
 
-  })
+import { OptionsChildren,OptionsAdult,optionsClass } from "../constants/Constant";
+
+const TrainSearch = () => {
+ 
   return (
     <>
-      <div className="container p-3">
-        <div className="d-flex align-items-center">
-          <button className={`px-4 py-2 rounded-pill border-0 mx-3 ${searchParams.triptype === "oneway" ? "bg-primary text-light" : "bg-secondary text-light"}`} onClick={() => setSearchparams(prev => ({
-            ...prev,triptype:'oneway'
-          }))}>One Way</button>
-
-
-          <button className={`px-4 py-2 rounded-pill border-0 ${searchParams.triptype === "round" ? "bg-primary text-light" : "bg-secondary text-light"}`} onClick={() => setSearchparams(prev => ({
-            ...prev,triptype:'round'
-          }))}>Check PNR Status</button>
-          
-        </div>
-        <div className="container">
-          <div className="row">
-            <div className="col-3">
-            <label >From</label>
-              <div className="container border border-sexondary d-flex p-3">
-                <img src={plane} className="iconsize" alt="plane" />
-                <input type="text" className="w-100 border-0" placeholder="Enter City"/>
-              </div>
+       <div className="container p-2"><h2>Search for the Trains</h2></div>
+      <div className="container-fluid my-4 d-flex justify-content-evenly align-items-center  ">
+       
+          <div className="row g-1">
+          <div className=" col-12 col-sm-4 col-md-6 col-lg-2">
+            <labe>from</labe>
+            <InputField  type="search" placeholder="From" name="From "  className="w-100"/>
             </div>
-            <div className="col-3">
-            <label >To</label>
-              <div className="container border border-sexondary  d-flex p-3">
-                <img src={plane} className="iconsize" alt="plane" />
-                <input type="text" placeholder="Enter City"  className="w-100 border-0"/>
-              </div>
+          <div className=" col-12 col-sm-4 col-md-6 col-lg-2">
+            <labe
+            >To</labe>
+            <InputField type="search" placeholder="To" name="To"  className="w-100" />
+            </div>
 
+          <div className="col-12 col-sm-4 col-md-6 col-lg-2">
+            <label>Choose the Date</label>
+            <BasicDatePicker name="Departure"  className="w-100" />
             </div>
-            <div className="col-3">
-            <label >Date</label>
-              <div className="container border border-sexondary  d-flex p-3">
-                <img src={plane} className="iconsize" alt="plane" />
-                <input type="date" placeholder="Enter date"  className="w-100 border-0"/>
-              </div>
-            </div>
-            <div className="col-3">
-            <label >Travellers & class</label>
-              <div className="container border border-sexondary  d-flex p-3">
-                <button className="border-0 bg-light" >
-                  {searchParams.passengers?.adult || 1}Adults,{searchParams.class}
-               </button>
-              </div>
             
-
+         
+          <div className="col-12 col-sm-4 col-md-6 col-lg-2">
+            <label>Adults</label>
+            <BasicSelect Options={OptionsAdult} label="Adults" value="adults"  className="w-100" />
             </div>
-          </div>
-          <div className="container ">
-           <Custombutton variant="contained" size="large" color="primary" text1="Search Trains" className="d-flex justify-content-center mx-auto"/>
-          </div>
+          <div className="col-12 col-sm-4 col-md-6 col-lg-2">
+            <label>Children</label>
+            <BasicSelect Options={OptionsChildren} label="Children" value="Children"  className="w-100" />
+            </div>
+          <div className="col-12 col-sm-4 col-md-6 col-lg-2">
+            <label>Class</label>
+            <BasicSelect Options={optionsClass} label="Class" value="Class"  className="w-100" />
+            </div>
+
         </div>
+        
+          
 
         
+          
+          
+   
+
+          
+          
+
+          
+       
       </div>
+      <div className="container d-flex justify-content-center">
+          <Custombutton text1="Search Trains" variant="contained" color="warning" className="m-3"/>
+
+        </div>
     </>
   )
 }

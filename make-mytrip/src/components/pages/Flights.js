@@ -10,7 +10,7 @@ export const Flights = () => {
  
   return (
     <>
-      <div className="container-fluid shadow mt-5 bg-light rounded">
+      <div className="container-fluid shadow mt-3 bg-light rounded border border-3 border-secondary">
         <FlightSeacrh />
         
       </div>

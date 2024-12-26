@@ -4,7 +4,7 @@ import HolidaySearch from '../search/HolidaySearch'
 const Holiday = () => {
   return (
     <div className='container-fluid
-     shadow mt-5 bg-light rounded'>
+     shadow mt-3 bg-light rounded  border border-3 border-secondary'>
       <HolidaySearch/>
     </div>
   )

@@ -4,7 +4,7 @@ import { Container } from '@mui/material'
 const Cabs = () => {
   return (
     <>
-     <Container  className="container-fluid shadow mt-5 bg-light rounded"><CabsSearch /></Container>
+     <Container  className="container-fluid shadow mt-3 bg-light rounded  border border-3 border-secondary"><CabsSearch /></Container>
      
    
     </>

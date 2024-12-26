@@ -26,11 +26,11 @@ body{
     border: 1px solid gray;
 }
 .custom-margin{
-  margin-top: 50px;
+  margin-top: 110px;
 }
 .postion-arrange{
   position: absolute;
-  top: 10%;
+  top: 18%;
   border: 2px solid lightgray;
   border-radius: 30px;
 }

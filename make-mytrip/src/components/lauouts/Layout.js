@@ -8,7 +8,7 @@ import { Outlet } from "react-router-dom";
     <>
       <div>
         <Header />
-        <main className=" p-5 mx-4 bg-light shadow border-secondary custom-margin ">
+        <main className=" p-5  bg-light shadow border-secondary  rounded mx-5" >
           <Outlet/>
         </main>
       </div>
