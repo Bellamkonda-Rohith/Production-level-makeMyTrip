@@ -1,69 +1,52 @@
-import React, { useState } from "react";
-import plane from '../assests/plane.svg'
-import Custombutton from "../common/Custombutton";
-import InputField from "../common/InputField";
-import BasicDatePicker from "../common/BasicDatePicker";
-import BasicSelect from "../common/BasicSelect";
 
-import { OptionsChildren,OptionsAdult,optionsClass } from "../constants/Constant";
-
+import React, { useState } from 'react';
+import InputField from '../common/InputField';
+import Custombutton from '../common/Custombutton';
+import BasicDatePicker from '../common/BasicDatePicker';
+import { citiesWithAirportsInIndia, optionsTrainClass } from '../constants/Constant';
+import BasicSelect from '../common/BasicSelect';
 const TrainSearch = () => {
- 
-  return (
-    <>
-       <div className="container p-2"><h2>Search for the Trains</h2></div>
-      <div className="container-fluid my-4 d-flex justify-content-evenly align-items-center  ">
-       
-          <div className="row g-1">
-          <div className=" col-12 col-sm-4 col-md-6 col-lg-2">
-            <labe>from</labe>
-            <InputField  type="search" placeholder="From" name="From "  className="w-100"/>
-            </div>
-          <div className=" col-12 col-sm-4 col-md-6 col-lg-2">
-            <labe
-            >To</labe>
-            <InputField type="search" placeholder="To" name="To"  className="w-100" />
-            </div>
+  const [formData, setFormData] = useState({
+    from: '',
+    to: '',
+    departure: null,
+    classType: null,
+  });
 
-          <div className="col-12 col-sm-4 col-md-6 col-lg-2">
-            <label>Choose the Date</label>
-            <BasicDatePicker name="Departure"  className="w-100" />
-            </div>
-            
-         
-          <div className="col-12 col-sm-4 col-md-6 col-lg-2">
-            <label>Adults</label>
-            <BasicSelect Options={OptionsAdult} label="Adults" value="adults"  className="w-100" />
-            </div>
-          <div className="col-12 col-sm-4 col-md-6 col-lg-2">
-            <label>Children</label>
-            <BasicSelect Options={OptionsChildren} label="Children" value="Children"  className="w-100" />
-            </div>
-          <div className="col-12 col-sm-4 col-md-6 col-lg-2">
-            <label>Class</label>
-            <BasicSelect Options={optionsClass} label="Class" value="Class"  className="w-100" />
-            </div>
+  const handleInputChange = (field, value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [field]: value,
+    }));
+  };
 
-        </div>
-        
-          
-
-        
-          
-          
+  const handleSearch = () => {
+    console.log('Form Data:', formData);
+    };
    
 
-          
-          
-
-          
-       
-      </div>
-      <div className="container d-flex justify-content-center">
-          <Custombutton text1="Search Trains" variant="contained" color="warning" className="m-3"/>
-
+  return (
+    <div className='container mt-5'>
+      <h2>Search Flights</h2>
+      <div className='row mt-3 g-3 d-flex align-items-center '>
+        <div className=' col-12 col-sm-6 col-md-6 col-lg-3'>
+         <InputField name="From" data={citiesWithAirportsInIndia} neededlabel="city" setsearchdata={(value)=>handleInputChange('from',value)} />
         </div>
-    </>
-  )
-}
-export default TrainSearch  ;
+        <div className='col-12 col-sm-6 col-md-6 col-lg-3'>
+        <InputField name="To" data={citiesWithAirportsInIndia} neededlabel="city" setsearchdata={(value)=>handleInputChange('to',value)} />
+        </div>
+        <div className='col-12 col-sm-6 col-md-6 col-lg-3 '>
+         <BasicDatePicker setsearchdata={(value)=>handleInputChange('departure',value)}/>
+        </div>
+        <div className='col-12 col-sm-6 col-md-6 col-lg-3 '>
+      <BasicSelect options={optionsTrainClass} name="Select Class" getTheSelcetvalue={(value)=>handleInputChange('classType',value)}/>
+        </div>
+      </div>
+      <div className='container d-flex m-3'>
+        <Custombutton text1="Search Flight" onClick={handleSearch} className="mx-auto p-2" variant='contained' />
+      </div>
+    </div>
+  );
+};
+
+export default TrainSearch;

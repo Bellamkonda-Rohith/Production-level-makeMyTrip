@@ -1,23 +1,43 @@
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
-import React from 'react'
+export default function BasicSelect({ options, name,getTheSelcetvalue }) {
+  const [age, setAge] = React.useState('');
 
-const BasicSelect = ({Options,className,fontSize,onChange,name}) => {
+  const handleChange = (event) => {
+    const value=event.target.value
+    setAge(value);
+    getTheSelcetvalue(value)
+  };
+
   return (
     <>
+      <Box sx={{ minWidth: 120 ,marginTop:"5px"}}>
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">{name}</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={age} // Bind the state value to the Select component
+            label={name}
+            onChange={handleChange}
+          >
+            {options.map((data) => {
+              const { label, value } = data;
+              return (
+                <MenuItem key={value} value={value} sx={{ fontSize: '14px', color: 'black' }}>
+                  {label}
+                </MenuItem>
+              );
+            })}
+          </Select>
+        </FormControl>
+      </Box>
      
-      <select className={className}  style={{height:"50px",borderRadius:"5px",border:"1px solid blue",fontSize:fontSize}} name={name} onChange={onChange}>
-
-          {Options.map((opt) => {
-            const {label,value}=opt
-            return (<>
-              
-              <option value={value}>{label}</option>
-            </>)
-})}
-      </select>
-     
-  </>
-  )
+    </>
+  );
 }
-
-export default BasicSelect

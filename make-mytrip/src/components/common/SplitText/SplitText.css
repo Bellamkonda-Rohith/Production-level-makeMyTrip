@@ -1,0 +1,10 @@
+.letter {
+    display: inline-block;
+    will-change: transform, opacity;
+    font-size: 50px;
+  }
+  
+  .split-parent {
+    display: inline;
+    overflow: hidden;
+  }

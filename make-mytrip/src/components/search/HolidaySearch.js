@@ -10,6 +10,7 @@ const HolidaySearch = () => {
 
    return (
      <>
+       <div className='container mt-5'>
        <div className='container p-2'><h2>Search Holiday Packages</h2></div>
        <div className='container-fluid justify-content-evenly mt-3'>
          <div className='row g-0'>
@@ -67,6 +68,7 @@ const HolidaySearch = () => {
        <div className='container d-flex  m-4'>
          <Custombutton variant="contained" color="success" size="large" text1="Search Holiday" className="mx-auto"/>
        </div>
+    </div>
        </>)
 }
 

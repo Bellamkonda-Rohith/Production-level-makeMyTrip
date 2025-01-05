@@ -13,7 +13,9 @@ import Layout from './components/lauouts/Layout';
 import Cabs from './components/pages/Cabs';
 import Holiday from './components/pages/Holiday';
 import Currency from './components/pages/Currency';
+import { useState } from 'react';
 function App() {
+  const [searchinput,setSearchInput]=useState({})
   return (
     <>
      
@@ -23,7 +25,7 @@ function App() {
         
           <Route path='/' element={<Layout />}>
             <Route index element={<Home/>}/>
-          <Route path="/flights" element={<Flights/>} />
+          <Route path="/flights" element={<Flights searchinput={searchinput} setSearchInput={setSearchInput}/>} />
           <Route path="/hotels" element={<Hotels />} />
           <Route path="/trains" element={<Trains />} />
             <Route path="/buses" element={<Buses />} />

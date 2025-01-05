@@ -1,51 +1,49 @@
-import React, { useState } from "react";
-import plane from '../assests/plane.svg';
-import Bus from '../assests/Bus.svg'
-import Custombutton from "../common/Custombutton";
-import InputField from "../common/InputField";
-import BasicDatePicker from "../common/BasicDatePicker";
+
+import React, { useState } from 'react';
+import InputField from '../common/InputField';
+import Custombutton from '../common/Custombutton';
+import BasicDatePicker from '../common/BasicDatePicker';
+import { citiesWithAirportsInIndia } from '../constants/Constant';
 const BusSearch = () => {
-  const [searchParams, setSearchparams] = useState({
-    triptype: "Oneway",
-    passengers: { adult: 1, children: 0, infants: 0 },
-    class:"economy"
+  const [formData, setFormData] = useState({
+    from: '',
+    to: '',
+    date: null,
+   
+  });
 
-  })
-  const [BusinputDetails,setBusinputDetails]=useState("")
-  const handleBusinput = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setBusinputDetails((prev) => ({
-      ...prev,[name]:value
-    }))
-  }
-  const  handleBusSubmit = () => {
-    console.log("BusinputDetails",BusinputDetails)
-  }
+  const handleInputChange = (field, value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [field]: value,
+    }));
+  };
+
+  const handleSearch = () => {
+    console.log('Form Data:', formData);
+    };
+   
+
   return (
-    <>
-      <div className="container p-2"><h2>Search Buses</h2></div>
-      <div className="container mt-2">
-        <div className="row">
-          <div className=" col-12 col-sm-6 col-md-6 col-lg-5">
-            <label>From</label>
-            <InputField  type="search" placeholder="From" name="From "  className="w-100" onChange={handleBusinput}/>
-            </div>
-          <div className=" col-12 col-sm-6 col-md-6 col-lg-5">
-            <label>To</label>
-            <InputField type="search" placeholder="To" name="To"  className="w-100" onChange={handleBusinput} />
-            </div>
-
-          <div className="col-12 col-sm-4 col-md-6 col-lg-2">
-            <label>Date</label>
-            <BasicDatePicker name="Date"   className="w-100" onChange={handleBusinput} />
-            </div>
+    <div className='container mt-5'>
+      <h2>Search Flights</h2>
+      <div className='row mt-3 g-3 d-flex align-items-center '>
+        <div className=' col-12 col-sm-6 col-md-6 col-lg-4'>
+         <InputField name="From" data={citiesWithAirportsInIndia} neededlabel="city" setsearchdata={(value)=>handleInputChange('from',value)} />
         </div>
-        <div className="container d-flex justify-content-center">
-          <Custombutton text1="Search Buses" variant="contained" size="large" color="warning" onClick={handleBusSubmit} className="m-3"/>
+        <div className='col-12 col-sm-6 col-md-6 col-lg-4'>
+        <InputField name="To" data={citiesWithAirportsInIndia} neededlabel="city" setsearchdata={(value)=>handleInputChange('to',value)} />
         </div>
+        <div className='col-12 col-sm-6 col-md-6 col-lg-4 '>
+         <BasicDatePicker setsearchdata={(value)=>handleInputChange('date',value)}/>
+        </div>
+        
       </div>
-    </>
-  )
-}
+      <div className='container d-flex m-3'>
+        <Custombutton text1="Search Buses" onClick={handleSearch} className="mx-auto p-2" variant='contained' />
+      </div>
+    </div>
+  );
+};
+
 export default BusSearch;

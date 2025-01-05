@@ -138,3 +138,180 @@ export const optionsDuration = [
   { value: "cruise", label: "Cruise" },
   { value: "honeymoon", label: "Honeymoon" }
 ];
+ export const citiesWithAirportsInIndia = [
+  { city: "Delhi", airport: "Indira Gandhi International Airport" },
+  { city: "Mumbai", airport: "Chhatrapati Shivaji Maharaj International Airport" },
+  { city: "Bangalore", airport: "Kempegowda International Airport" },
+  { city: "Chennai", airport: "Chennai International Airport" },
+  { city: "Kolkata", airport: "Netaji Subhas Chandra Bose International Airport" },
+  { city: "Hyderabad", airport: "Rajiv Gandhi International Airport" },
+  { city: "Ahmedabad", airport: "Sardar Vallabhbhai Patel International Airport" },
+  { city: "Pune", airport: "Pune International Airport" },
+  { city: "Goa", airport: "Dabolim International Airport" },
+  { city: "Kochi", airport: "Cochin International Airport" },
+  { city: "Thiruvananthapuram", airport: "Thiruvananthapuram International Airport" },
+  { city: "Coimbatore", airport: "Coimbatore International Airport" },
+  { city: "Visakhapatnam", airport: "Visakhapatnam International Airport" },
+  { city: "Surat", airport: "Surat International Airport" },
+  { city: "Indore", airport: "Devi Ahilya Bai Holkar International Airport" },
+  { city: "Kannur", airport: "Kannur International Airport" },
+  { city: "Amritsar", airport: "Sri Guru Ram Dass Jee International Airport" },
+  { city: "Lucknow", airport: "Chaudhary Charan Singh International Airport" },
+  { city: "Jaipur", airport: "Jaipur International Airport" },
+  { city: "Gaya", airport: "Gaya International Airport" },
+  { city: "Patna", airport: "Jay Prakash Narayan Airport" },
+  { city: "Bhubaneswar", airport: "Biju Patnaik International Airport" },
+  { city: "Ranchi", airport: "Birsa Munda International Airport" },
+  { city: "Chandigarh", airport: "Chandigarh International Airport" },
+  { city: "Bhopal", airport: "Raja Bhoj Airport" },
+  { city: "Madurai", airport: "Madurai International Airport" },
+  { city: "Tiruchirappalli", airport: "Tiruchirappalli International Airport" },
+  { city: "Mangalore", airport: "Mangalore International Airport" },
+  { city: "Kozhikode", airport: "Calicut International Airport" },
+  { city: "Agartala", airport: "Maharaja Bir Bikram Airport" },
+  { city: "Agra", airport: "Agra Airport" },
+  { city: "Varanasi", airport: "Lal Bahadur Shastri International Airport" },
+  { city: "Kanpur", airport: "Kanpur Airport" },
+  { city: "Jodhpur", airport: "Jodhpur Airport" },
+  { city: "Raipur", airport: "Swami Vivekananda Airport" },
+  { city: "Srinagar", airport: "Srinagar Airport" },
+  { city: "Guwahati", airport: "Lokpriya Gopinath Bordoloi International Airport" },
+  { city: "Shillong", airport: "Shillong Airport" },
+  { city: "Itanagar", airport: "Itanagar Airport" },
+  { city: "Leh", airport: "Leh Airport" },
+  { city: "Dimapur", airport: "Dimapur Airport" },
+  { city: "Imphal", airport: "Imphal Airport" },
+  { city: "Aizawl", airport: "Aizawl Airport" },
+  { city: "Shimla", airport: "Shimla Airport" },
+  { city: "Dehradun", airport: "Dehradun Airport" },
+  { city: "Bagdogra", airport: "Bagdogra Airport" },
+  { city: "Dharamshala", airport: "Gaggal Airport" },
+  { city: "Jammu", airport: "Jammu Airport" },
+  { city: "Vadodara", airport: "Vadodara Airport" },
+  { city: "Rajkot", airport: "Rajkot Airport" },
+  { city: "Jamnagar", airport: "Jamnagar Airport" },
+  { city: "Bhavnagar", airport: "Bhavnagar Airport" },
+  { city: "Udaipur", airport: "Maharana Pratap Airport" },
+  { city: "Jaisalmer", airport: "Jaisalmer Airport" },
+  { city: "Aurangabad", airport: "Aurangabad Airport" },
+  { city: "Nagpur", airport: "Dr. Babasaheb Ambedkar International Airport" },
+  { city: "Nashik", airport: "Nashik Airport" },
+  { city: "Kolhapur", airport: "Kolhapur Airport" },
+  { city: "Jabalpur", airport: "Jabalpur Airport" },
+  { city: "Khajuraho", airport: "Khajuraho Airport" },
+  { city: "Gwalior", airport: "Gwalior Airport" },
+  { city: "Bilaspur", airport: "Bilaspur Airport" },
+  { city: "Pondicherry", airport: "Pondicherry Airport" },
+  { city: "Tuticorin", airport: "Tuticorin Airport" },
+  { city: "Gorakhpur", airport: "Gorakhpur Airport" },
+  { city: "Belgaum", airport: "Belgaum Airport" },
+  { city: "Hubli", airport: "Hubli Airport" },
+  { city: "Vijayawada", airport: "Vijayawada Airport" },
+  { city: "Kadapa", airport: "Kadapa Airport" },
+  { city: "Tirupati", airport: "Tirupati Airport" },
+  { city: "Rajahmundry", airport: "Rajahmundry Airport" },
+  { city: "Warangal", airport: "Warangal Airport" }
+];
+export const optionsTrainClass = [
+  { value: "sleeper", label: "Sleeper" },
+  { value: "ac_3_tier", label: "AC 3 Tier" },
+  { value: "ac_2_tier", label: "AC 2 Tier" },
+  { value: "first_class", label: "First Class" },
+  { value: "ac_first_class", label: "AC First Class" },
+  { value: "ac_chair_car", label: "AC Chair Car" },
+  { value: "second_sitting", label: "Second Sitting" },
+  { value: "executive_chair_car", label: "Executive Chair Car" }
+];
+
+ export const imagesData = [
+  { id: 1, url: "https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg?auto=compress&cs=tinysrgb&w=600" },
+  { id: 2, url: "https://images.pexels.com/photos/886521/pexels-photo-886521.jpeg?auto=compress&cs=tinysrgb&w=600" },
+   { id: 3, url: "https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg?auto=compress&cs=tinysrgb&w=600" },
+   { id: 4, url: "https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg?auto=compress&cs=tinysrgb&w=600" },
+   { id: 5, url: "https://images.pexels.com/photos/248159/pexels-photo-248159.jpeg?auto=compress&cs=tinysrgb&w=600" },
+   { id: 6, url: "https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?auto=compress&cs=tinysrgb&w=600" }
+  
+  
+];
+
+export const Rsponsedata=[
+  {
+    "idHotel": "1",
+    "strHotel": "The Beef Inn",
+    "strHotelThumb": "https://images.pexels.com/photos/8092391/pexels-photo-8092391.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "strHotelDescription": "A cozy inn specializing in beef dishes, offering a warm atmosphere and excellent service.",
+    "price": "$120 per night"
+  },
+  
+  {
+    "idHotel": "2",
+    "strHotel": "Chicken Delight Hotel",
+    "strHotelThumb": "https://images.pexels.com/photos/7746042/pexels-photo-7746042.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "strHotelDescription": "A family-friendly hotel known for its delicious chicken meals and comfortable accommodations.",
+    "price": "$100 per night"
+  },
+  
+  {
+    "idHotel": "3",
+    "strHotel": "Dessert Haven",
+    "strHotelThumb": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "strHotelDescription": "A unique hotel that offers a variety of dessert-themed rooms and a sweet dining experience.",
+    "price": "$150 per night"
+  },
+  
+  {
+    "idHotel": "4",
+    "strHotel": "Lamb's Rest",
+    "strHotelThumb": "https://images.pexels.com/photos/8081396/pexels-photo-8081396.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "strHotelDescription": "A tranquil retreat featuring lamb dishes and a peaceful environment for relaxation.",
+    "price": "$130 per night"
+  },
+  
+  {
+    "idHotel": "5",
+    "strHotel": "Miscellaneous Suites",
+    "strHotelThumb": "https://images.pexels.com/photos/10877503/pexels-photo-10877503.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "strHotelDescription": "A versatile hotel offering a mix of accommodations and dining options for every taste.",
+    "price": "$110 per night"
+  },
+  
+  {
+    "idHotel": "6",
+    "strHotel": "Pasta Palace",
+    "strHotelThumb": "https://images.pexels.com/photos/10973940/pexels-photo-10973940.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "strHotelDescription": "An Italian-themed hotel with a focus on pasta dishes and a charming ambiance.",
+    "price": "$140 per night"
+  },
+  
+  {
+    "idHotel": "7",
+    "strHotel": "Pork Paradise",
+    "strHotelThumb": "https://images.pexels.com/photos/29000012/pexels-photo-29000012/free-photo-of-modern-hotel-room-with-twin-beds-and-elegant-decor.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "strHotelDescription": "A vibrant hotel known for its pork specialties and lively atmosphere.",
+    "price": "$125 per night"
+  },
+  
+  {
+    "idHotel": "8",
+    "strHotel": "Seafood Sanctuary",
+    "strHotelThumb": "https://images.pexels.com/photos/24807135/pexels-photo-24807135/free-photo-of-sunbeds-around-pool-in-summer-resort.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "strHotelDescription": "A seaside hotel offering fresh seafood and stunning ocean views.",
+    "price": "$160 per night"
+  },
+  
+  {
+    "idHotel": "9",
+    "strHotel": "Side Dish Retreat",
+    "strHotelThumb": "https://images.pexels.com/photos/27274134/pexels-photo-27274134/free-photo-of-a-large-indoor-swimming-pool-with-lounge-chairs.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "strHotelDescription": "A unique hotel that pairs main courses with delightful side dishes for a complete dining experience.",
+    "price": "$115 per night"
+  },
+  
+  {
+    "idHotel": "10",
+    "strHotel": "Starter's Lodge",
+    "strHotelThumb": "https://images.pexels.com/photos/12934594/pexels-photo-12934594.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "strHotelDescription": "A charming lodge that serves a variety of starters and appetizers in a cozy setting.",
+    "price": "$90 per night"
+  }
+]

@@ -1,67 +1,51 @@
-import React from 'react'
-import { useState } from 'react'
-import cab from '../assests/cab.svg'
-import Custombutton from '../common/Custombutton'
+
+import React, { useState } from 'react';
 import InputField from '../common/InputField';
+import Custombutton from '../common/Custombutton';
 import BasicDatePicker from '../common/BasicDatePicker';
-import BasicSelect from '../common/BasicSelect';
-import { optionsHours,optionsMinutes,optionsAmPm } from '../constants/Constant';
+import { citiesWithAirportsInIndia } from '../constants/Constant';
 const CabsSearch = () => {
- 
+  const [formData, setFormData] = useState({
+    from: '',
+    to: '',
+    departure: null,
+    returnDate: null,
+  });
 
+  const handleInputChange = (field, value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [field]: value,
+    }));
+  };
 
-  return (
-    <>
-      <div className='container p-2'><h2>Search Cabs</h2></div>
-          <div className="container-fluid my-4 d-flex justify-content-around align-items-center  ">
-          <div className="row g-5">
-            <div className=" col-12 col-sm-4 col-md-6 col-lg-2">
-            <InputField  type="search" placeholder="From" name="From "  className="w-100"/>
-            </div>
-            <div className=" col-12 col-sm-4 col-md-6 col-lg-2">
-            <InputField type="search" placeholder="To" name="To"  className="w-100" />
-            </div>
-
-            <div className="col-12 col-sm-4 col-md-6 col-lg-2">
-            <BasicDatePicker name="Departure"  className="w-100" />
-            </div>
-            
-            <div className=" col-12 col-sm-4 col-md-6 col-lg-2">
-          <BasicDatePicker name="Return"  className="w-100" />
-
-            </div>
-          <div className='col-4 border-secondary border'>
-            <div className='row'>
-            <div className="col-12 col-sm-10 col-md-6 col-lg-4 border-0">
-            <BasicSelect Options={optionsHours} label="Adults" value="adults"  className="w-100 border-0" />
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 col-lg-4 border-0">
-            <BasicSelect Options={optionsMinutes} label="Children" value="Children"  className="w-100 border-0" />
-            </div>
-            <div className="col-12 col-sm-4 col-md-6 col-lg-4 border-0">
-            <BasicSelect Options={optionsAmPm} label="Class" value="Class"  className="w-100 border-0" />
-            </div>
-            </div>
-            </div>
-
-          </div>
-          
-
-        
-          
-          
+  const handleSearch = () => {
+    console.log('Form Data:', formData);
+    };
    
 
-          
-          
+  return (
+    <div className='container mt-5'>
+      <h2>Search Flights</h2>
+      <div className='row mt-3 g-3 d-flex align-items-center '>
+        <div className=' col-12 col-sm-6 col-md-6 col-lg-3'>
+         <InputField name="From" data={citiesWithAirportsInIndia} neededlabel="city" setsearchdata={(value)=>handleInputChange('from',value)} />
+        </div>
+        <div className='col-12 col-sm-6 col-md-6 col-lg-3'>
+        <InputField name="To" data={citiesWithAirportsInIndia} neededlabel="city" setsearchdata={(value)=>handleInputChange('to',value)} />
+        </div>
+        <div className='col-12 col-sm-6 col-md-6 col-lg-3 '>
+         <BasicDatePicker setsearchdata={(value)=>handleInputChange('departure',value)}/>
+        </div>
+        <div className='col-12 col-sm-6 col-md-6 col-lg-3 '>
+      <BasicDatePicker  setsearchdata={(value)=>handleInputChange('returnDate',value)}/>
+        </div>
+      </div>
+      <div className='container d-flex m-3'>
+        <Custombutton text1="Search Flight" onClick={handleSearch} className="mx-auto p-2" variant='contained' />
+      </div>
+    </div>
+  );
+};
 
-          
-       
-      </div>
-      <div className='container d-flex justify-content-center'>
-        <Custombutton text1="Search Cabs" color='warning' className="m-2 " variant="contained"/>
-      </div>
-    </>
-  )
-}
 export default CabsSearch;

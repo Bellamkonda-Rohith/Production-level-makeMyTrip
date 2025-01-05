@@ -5,7 +5,7 @@ const Holiday = () => {
   return (
     <div className='container-fluid
      shadow mt-3 bg-light rounded  border border-3 border-secondary'>
-      <HolidaySearch/>
+    
     </div>
   )
 }

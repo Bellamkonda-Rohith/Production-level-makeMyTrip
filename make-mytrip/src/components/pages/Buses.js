@@ -6,7 +6,7 @@ import BusSearch from "../search/BusSearch";
   return (
     <>
       <div className="container-fluid mt-3 shadow bg-light rounded  border border-3 border-secondary">
-      <BusSearch/>
+     <BusSearch/>
 </div>
       
     </>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Custombutton from '../common/Custombutton';
-
+import InputField from '../common/InputField';
+import BasicSelect from '../common/BasicSelect';
+import { OptionsAdult,OptionsChildren, optionsClass, optionsRooms } from '../constants/Constant';
 const TestSearch = () => {
   const [handleinputhotel, sethandleinputshotel] = useState("");
 
@@ -19,62 +21,42 @@ const TestSearch = () => {
 
   return (
     <>
+      <div className='container mt-5'>
       <h3 className='p-4'>Hotel Search</h3>
       
       <div className='container'>
         <div className='row g-3'>
           <div className='col-12 col-sm-6 col-md-2'>
             <label>Search</label>
-            <input type='search' name="search" placeholder="Search for the place" onChange={handleInputs} className='form-control'/>
+            <InputField type='search' name="search" placeholder="Search for the place" onChange={handleInputs} className='form-control'/>
           </div>
           <div className='col-12 col-sm-6 col-md-2'>
             <label>Checkin</label>
-            <input type='date' name="checkin" onChange={handleInputs} className='form-control'/>
+            <InputField type='date' name="checkin" onChange={handleInputs} className='form-control'/>
           </div>
           <div className='col-12 col-sm-6 col-md-2'>
             <label>Checkout</label>
-            <input type='date' name="checkout" onChange={handleInputs} className='form-control'/>
+            <InputField type='date' name="checkout" onChange={handleInputs} className='form-control'/>
           </div>
           <div className='col-12 col-sm-6 col-md-2'>
             <label>Select Rooms</label>
-            <select name='Select rooms' onChange={handleInputs} className='form-control'>
-              <option value="">Select rooms</option>
-              <option value={1}>1 Room</option>
-              <option value={2}>2 Rooms</option>
-              <option value={3}>3 Rooms</option>
-              <option value={4}>4 Rooms</option>
-            </select>
+            <BasicSelect name='Select rooms'Options={optionsRooms} onChange={handleInputs} className='form-control'/>
+            
           </div>
           <div className='col-12 col-sm-6 col-md-1'>
             <label>Class</label>
-            <select name='Room Type' onChange={handleInputs} className='form-control'>
-              <option value="">Select room type</option>
-              <option value="Normal">Normal</option>
-              <option value="Luxury">Luxury</option>
-              <option value="Ultra Luxury">Ultra Luxury</option>
-            </select>
+            < BasicSelect name='Room Type' Options={optionsClass} onChange={handleInputs} className='form-control'/>
+             
           </div>
           <div className='col-12 col-sm-6 col-md-1'>
             <label>Adults</label>
-            <select name='Select Adults' onChange={handleInputs} className='form-control'>
-              <option value="">Adults</option>
-              <option value={1}>1 Adult</option>
-              <option value={2}>2 Adults</option>
-              <option value={3}>3 Adults</option>
-              <option value={4}>4 Adults</option>
-              <option value={5}>5 Adults</option>
-              <option value={6}>6 Adults</option>
-              <option value={7}>7 Adults</option>    
-            </select>
+            <BasicSelect name='Select Adults' Options={OptionsAdult} onChange={handleInputs} className='form-control'/>
+              
           </div>
           <div className='col-12 col-sm-6 col-md-2'>
             <label>Children</label>
-            <select name='Select childrens' onChange={handleInputs} className='form-control'>
-              <option value="">Children</option>
-              <option value={1}>1 Child</option>
-              <option value={2}>2 Children</option>
-              <option value={3}>3 Children</option>
-            </select>
+            <BasicSelect Options={OptionsChildren} name='Select childrens' onChange={handleInputs} className='form-control'/>
+              
           </div>
         </div>
       </div>
@@ -83,6 +65,7 @@ const TestSearch = () => {
       <Custombutton onClick={handleButton} variant="contained" color="success"  text1="Submit" className="my-4"/>
       </div>
       
+</div>
     </>
   );
 }
