@@ -5,7 +5,7 @@ import BasicDatePicker from '../common/BasicDatePicker'
 import { citiesWithAirportsInIndia } from '../constants/Constant'
 import { Rsponsedata } from '../constants/Constant'
 import axios from 'axios'
-import ApiServices from '../Services/ApiServices'
+import ApiServices, { fectchdataapi } from '../Services/ApiServices'
 const FlightSearch = () => {
     const [formData, setFormData] = useState({
         title: '',
@@ -29,8 +29,10 @@ const FlightSearch = () => {
         const response = url.data
         setResoinsedata([response])
         console.log(responsedata)
+        const result = await fectchdataapi.flightsearch(formData)
+        console.log("result",result)
     }
-    <ApiServices Baseurl="https://api.escuelajs.co/api/v1/products" data={formData} method="post" />
+   
 
 
     return (
